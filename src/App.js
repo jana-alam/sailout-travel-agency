@@ -1,11 +1,15 @@
-import logo from "./logo.svg";
 import "./App.css";
 import Header from "./components/Header/Header";
+import Login from "./components/Login/Login";
+import AuthProvider from "./context/AuthProvider";
 
 function App() {
   return (
     <div className="App">
-      <Header></Header>
+      <AuthProvider>
+        <Header></Header>
+        <Login></Login>
+      </AuthProvider>
     </div>
   );
 }

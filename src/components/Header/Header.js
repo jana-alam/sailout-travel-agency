@@ -2,6 +2,7 @@ import React from "react";
 import { Disclosure } from "@headlessui/react";
 import { LogoutIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
 import logo from "../../images/sailout-logo.png";
+import useAuth from "../../hooks/useAuth";
 
 const navigation = [
   { name: "Home", href: "#", current: true },
@@ -15,6 +16,10 @@ function classNames(...classes) {
 }
 
 const Header = () => {
+  const { user, logOut } = useAuth();
+  const handleLogOut = () => {
+    logOut();
+  };
   return (
     <Disclosure as="nav" className="md:py-2">
       {({ open }) => (
@@ -69,7 +74,11 @@ const Header = () => {
                 </div>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                <span className="mr-2 text-yellow-600 font-bold">
+                  {user?.displayName}
+                </span>
                 <button
+                  onClick={handleLogOut}
                   type="button"
                   className="p-2 rounded-2xl bg-cyan-400 text-white"
                 >
