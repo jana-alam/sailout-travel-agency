@@ -5,6 +5,9 @@ import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
 import AuthProvider from "./context/AuthProvider";
 import NotFound from "./components/NotFound/NotFound";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
+
+import MyBookings from "./components/MyBookings/MyBookings";
 
 function App() {
   return (
@@ -19,6 +22,9 @@ function App() {
             <Route path="/home">
               <Home></Home>
             </Route>
+            <PrivateRoute path="/my-bookings">
+              <MyBookings></MyBookings>
+            </PrivateRoute>
             <Route path="/login">
               <Login></Login>
             </Route>

@@ -57,6 +57,7 @@ const Header = () => {
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4">
                     <NavLink to="/home">Home</NavLink>
+                    <NavLink to="/my-bookings">My Bookings</NavLink>
                     {user?.email && (
                       <>
                         <NavLink to="/my-bookings">My Bookings</NavLink>
