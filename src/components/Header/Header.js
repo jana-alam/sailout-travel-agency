@@ -3,13 +3,14 @@ import { Disclosure } from "@headlessui/react";
 import { LogoutIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
 import logo from "../../images/sailout-logo.png";
 import useAuth from "../../hooks/useAuth";
+import { Link, NavLink } from "react-router-dom";
 
-const navigation = [
-  { name: "Home", href: "#", current: true },
-  { name: "My Order", href: "#", current: false },
-  { name: "Manage All Order", href: "#", current: false },
-  { name: "Add Travel", href: "#", current: false },
-];
+// const navigation = [
+//   { name: "Home", href: "#", current: true },
+//   { name: "My Order", href: "#", current: false },
+//   { name: "Manage All Order", href: "#", current: false },
+//   { name: "Add Travel", href: "#", current: false },
+// ];
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -55,7 +56,15 @@ const Header = () => {
                 {/* Nav Links*/}
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4">
-                    {navigation.map((item) => (
+                    <NavLink to="/home">Home</NavLink>
+                    {user?.email && (
+                      <>
+                        <NavLink to="/my-bookings">My Bookings</NavLink>
+                        <NavLink to="/my-bookings">My Bookings</NavLink>
+                        <NavLink to="/my-bookings">My Bookings</NavLink>
+                      </>
+                    )}
+                    {/* {navigation.map((item) => (
                       <a
                         key={item.name}
                         href={item.href}
@@ -69,29 +78,36 @@ const Header = () => {
                       >
                         {item.name}
                       </a>
-                    ))}
+                    ))} */}
                   </div>
                 </div>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                <span className="mr-2 text-yellow-600 font-bold">
-                  {user?.displayName}
-                </span>
-                <button
-                  onClick={handleLogOut}
-                  type="button"
-                  className="p-2 rounded-2xl bg-cyan-400 text-white"
-                >
-                  <span className="sr-only">View notifications</span>
-                  <LogoutIcon className="h-6 w-6" aria-hidden="true" />
-                </button>
+                {user?.email ? (
+                  <div>
+                    <span className="mr-2 text-yellow-600 font-bold">
+                      {user?.displayName}
+                    </span>
+                    <button
+                      onClick={handleLogOut}
+                      type="button"
+                      className="p-2 rounded-2xl bg-cyan-400 text-white"
+                    >
+                      <LogoutIcon className="h-6 w-6" aria-hidden="true" />
+                    </button>
+                  </div>
+                ) : (
+                  <div>
+                    <Link to="/login">Login</Link>
+                  </div>
+                )}
               </div>
             </div>
           </div>
 
           <Disclosure.Panel className="sm:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              {navigation.map((item) => (
+              {/* {navigation.map((item) => (
                 <Disclosure.Button
                   key={item.name}
                   as="a"
@@ -106,7 +122,7 @@ const Header = () => {
                 >
                   {item.name}
                 </Disclosure.Button>
-              ))}
+              ))} */}
             </div>
           </Disclosure.Panel>
         </>

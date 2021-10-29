@@ -24,14 +24,14 @@ const useFirebase = () => {
         setUser({});
       }
     });
-  }, []);
+  }, [auth]);
 
   // google sign in function
   const googleSignIn = () => {
     return signInWithPopup(auth, provider)
       .then((result) => {
         console.log(result.user);
-        setUser(user);
+        setUser(result.user);
       })
       .catch((error) => console.log(error.message));
   };
@@ -42,7 +42,7 @@ const useFirebase = () => {
     signOut(auth).then((result) => setUser({}));
   };
 
-  return { user, googleSignIn, logOut };
+  return { user, setUser, googleSignIn, logOut };
 };
 
 export default useFirebase;
