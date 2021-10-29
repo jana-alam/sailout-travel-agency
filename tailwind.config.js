@@ -9,6 +9,9 @@ module.exports = {
         cyan: colors.cyan,
         sky: colors.sky,
       },
+      fontFamily: {
+        satisfy: ["Satisfy", "cursive"],
+      },
     },
   },
   variants: {

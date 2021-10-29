@@ -1,7 +1,7 @@
 import React from "react";
 
 const MyBookings = () => {
-  return <div>Bookings</div>;
+  return <p className="font-satisfy">Bookings</p>;
 };
 
 export default MyBookings;
