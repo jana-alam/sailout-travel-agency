@@ -8,6 +8,7 @@ import NotFound from "./components/NotFound/NotFound";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 
 import MyBookings from "./components/MyBookings/MyBookings";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
               <NotFound></NotFound>
             </Route>
           </Switch>
+          <Footer></Footer>
         </BrowserRouter>
       </AuthProvider>
     </div>
