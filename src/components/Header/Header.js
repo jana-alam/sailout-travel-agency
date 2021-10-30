@@ -85,16 +85,16 @@ const Header = () => {
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 {user?.email ? (
-                  <div>
-                    <span className="mr-2 text-yellow-400 font-bold">
+                  <div className="flex items-center">
+                    <span className="mr-2 font-semibold">
                       {user?.displayName}
                     </span>
                     <button
                       onClick={handleLogOut}
                       type="button"
-                      className="p-2 rounded-2xl bg-cyan-400 text-white"
+                      className="px-3 py-2 rounded-2xl bg-red-400 text-white"
                     >
-                      <LogoutIcon className="h-6 w-6" aria-hidden="true" />
+                      <LogoutIcon className="h-5 w-5" aria-hidden="true" />
                     </button>
                   </div>
                 ) : (
