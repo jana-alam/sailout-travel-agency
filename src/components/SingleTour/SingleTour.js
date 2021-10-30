@@ -7,11 +7,12 @@ import {
 import { useHistory } from "react-router";
 
 const SingleTour = (props) => {
-  const { country, title, description, imageUrl, price, tourists } = props.tour;
+  const { _id, country, title, description, imageUrl, price, tourists } =
+    props.tour;
   const history = useHistory();
 
-  const handleBookNow = () => {
-    history.push("/booking");
+  const handleBookNow = (id) => {
+    history.push(`/booking/${id}`);
   };
   return (
     <div className="shadow-lg">
@@ -36,7 +37,7 @@ const SingleTour = (props) => {
             {tourists}
           </p>
           <button
-            onClick={handleBookNow}
+            onClick={() => handleBookNow(_id)}
             className="flex items-center bg-yellow-100 text-yellow-400 px-2 py-1 rounded-3xl hover:bg-white hover:text-cyan-400 cursor-pointer"
           >
             <ShoppingCartIcon className="h-5 w-5 mr-1" />

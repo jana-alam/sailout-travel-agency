@@ -93,7 +93,7 @@ const AddTour = () => {
               className="w-full px-2 py-1 ring-1 ring-cyan-300 outline-none focus:ring-2 focus:ring-cyan-500"
             />
           </div>
-          {/* Person per tour */}
+          {/* Image Url */}
           <div className="col-span-2 space-y-1">
             <p>Image Url:</p>
             <input

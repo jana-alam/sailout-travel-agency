@@ -3,7 +3,7 @@ import { Disclosure } from "@headlessui/react";
 import { LogoutIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
 import logo from "../../images/sailout-logo.png";
 import useAuth from "../../hooks/useAuth";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
   const { user, logOut } = useAuth();
