@@ -9,6 +9,7 @@ import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 
 import MyBookings from "./components/MyBookings/MyBookings";
 import Footer from "./components/Footer/Footer";
+import AddTour from "./components/AddTour/AddTour";
 
 function App() {
   return (
@@ -25,6 +26,9 @@ function App() {
             </Route>
             <PrivateRoute path="/my-bookings">
               <MyBookings></MyBookings>
+            </PrivateRoute>
+            <PrivateRoute path="/add-tour">
+              <AddTour></AddTour>
             </PrivateRoute>
             <Route path="/login">
               <Login></Login>

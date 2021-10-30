@@ -5,22 +5,12 @@ import logo from "../../images/sailout-logo.png";
 import useAuth from "../../hooks/useAuth";
 import { Link, NavLink } from "react-router-dom";
 
-// const navigation = [
-//   { name: "Home", href: "#", current: true },
-//   { name: "My Order", href: "#", current: false },
-//   { name: "Manage All Order", href: "#", current: false },
-//   { name: "Add Travel", href: "#", current: false },
-// ];
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
-
 const Header = () => {
   const { user, logOut } = useAuth();
   const handleLogOut = () => {
     logOut();
   };
+
   return (
     <Disclosure as="nav" className="md:py-6">
       {({ open }) => (
@@ -56,30 +46,38 @@ const Header = () => {
                 {/* Nav Links*/}
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4">
-                    <NavLink to="/home">Home</NavLink>
-                    <NavLink to="/my-bookings">My Bookings</NavLink>
+                    <NavLink
+                      activeClassName="text-cyan-400 font-semibold"
+                      className="text-gray-600"
+                      to="/home"
+                    >
+                      Home
+                    </NavLink>
                     {user?.email && (
                       <>
-                        <NavLink to="/my-bookings">My Bookings</NavLink>
-                        <NavLink to="/my-bookings">My Bookings</NavLink>
-                        <NavLink to="/my-bookings">My Bookings</NavLink>
+                        <NavLink
+                          activeClassName="text-cyan-400"
+                          className="text-gray-600"
+                          to="/my-bookings"
+                        >
+                          My Bookings
+                        </NavLink>
+                        <NavLink
+                          activeClassName="text-cyan-400"
+                          className="text-gray-600"
+                          to="/all-bookings"
+                        >
+                          All Bookings
+                        </NavLink>
+                        <NavLink
+                          activeClassName="text-cyan-400"
+                          className="text-gray-600"
+                          to="/add-tour"
+                        >
+                          Add Tour
+                        </NavLink>
                       </>
                     )}
-                    {/* {navigation.map((item) => (
-                      <a
-                        key={item.name}
-                        href={item.href}
-                        className={classNames(
-                          item.current
-                            ? "text-cyan-400"
-                            : " hover:bg-cyan-50 hover:text-cyan-600",
-                          "px-3 py-2 rounded-md text-sm font-medium"
-                        )}
-                        aria-current={item.current ? "page" : undefined}
-                      >
-                        {item.name}
-                      </a>
-                    ))} */}
                   </div>
                 </div>
               </div>
@@ -99,7 +97,9 @@ const Header = () => {
                   </div>
                 ) : (
                   <div>
-                    <Link to="/login">Login</Link>
+                    <NavLink activeClassName="text-cyan-400" to="/login">
+                      Login
+                    </NavLink>
                   </div>
                 )}
               </div>

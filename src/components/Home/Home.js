@@ -1,12 +1,14 @@
 import React from "react";
 import Banner from "../Banner/Banner";
-import Packages from "../Packages/Packages";
+import Tours from "../Tours/Tours";
+import WhyChoose from "../WhyChoose/WhyChoose";
 
 const Home = () => {
   return (
     <>
       <Banner></Banner>
-      <Packages></Packages>
+      <Tours></Tours>
+      <WhyChoose></WhyChoose>
     </>
   );
 };
