@@ -53,7 +53,7 @@ const Footer = () => {
         </div>
       </div>
       {/* footer-bottom section */}
-      <div className="footer-bottom py-2 bg-black text-gray-50">
+      <div className="footer-bottom py-2 bg-black text-gray-50 text-center">
         <p>
           All Rights Reserved By <span className="text-cyan-400">sailout</span>
         </p>
