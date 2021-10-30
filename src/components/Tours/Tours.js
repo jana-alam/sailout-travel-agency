@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react";
 import SingleTour from "../SingleTour/SingleTour";
 
 const Tours = () => {
-  const nums = [1, 2, 3, 4, 5, 6];
-
   const [tourItems, setTourItems] = useState([]);
   useEffect(() => {
     fetch("http://localhost:5000/tours")

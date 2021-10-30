@@ -8,6 +8,7 @@ const Footer = () => {
     <footer>
       {/* footer-top section */}
       <div className="footer-top grid grid-cols-5 bg-gray-800 py-8 px-12">
+        {/* company address */}
         <div>
           <img src={darklogo} alt="" />
           <div className="text-left ml-2 mt-4 text-cyan-200">
@@ -25,17 +26,19 @@ const Footer = () => {
             </div>
           </div>
         </div>
+        {/* upcomig tours */}
         <div className="col-span-2">
           <h4 className="font-satisfy text-4xl text-cyan-400 text-center mb-4">
-            Latest Tours
+            Upcoming Tours
           </h4>
 
           <div className="grid grid-cols-3 gap-2">
-            <img src="https://i.ibb.co/TWj3rzN/italy.jpg" alt="" />
-            <img src="https://i.ibb.co/HGswJv3/hill.jpg" alt="" />
-            <img src="https://i.ibb.co/6vc2zjC/sydney.jpg" alt="" />
+            <img src="https://i.ibb.co/MBD1wtM/greece.jpg" alt="" />
+            <img src="https://i.ibb.co/sP7YDYc/morisus.jpg" alt="" />
+            <img src="https://i.ibb.co/P5knnZD/dark-paris.jpg" alt="" />
           </div>
         </div>
+        {/* Newsletter */}
         <div className="col-span-2">
           <h4 className="font-satisfy text-4xl text-cyan-400 text-center mb-4">
             Newsletter

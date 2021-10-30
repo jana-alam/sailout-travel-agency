@@ -106,7 +106,7 @@ const AddTour = () => {
           <input
             type="submit"
             value="Add tour"
-            className="px-20 py-2 mt-2 bg-cyan-500 text-white col-span-2"
+            className="px-20 py-2 mt-2 bg-cyan-500 text-white col-span-2 cursor-pointer"
           />
 
           {/* {errors.exampleRequired && <span>This field is required</span>} */}

@@ -29,7 +29,7 @@ const SingleTour = (props) => {
             <UsersIcon className="h-5 w-5 mr-1" />
             {tourists}
           </p>
-          <button className="flex items-center bg-yellow-100 text-yellow-400 px-2 py-1 rounded-3xl hover:bg-white hover:text-cyan-400">
+          <button className="flex items-center bg-yellow-100 text-yellow-400 px-2 py-1 rounded-3xl hover:bg-white hover:text-cyan-400 cursor-pointer">
             <ShoppingCartIcon className="h-5 w-5 mr-1" />
             Book Now
           </button>
