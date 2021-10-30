@@ -4,9 +4,15 @@ import {
   ShoppingCartIcon,
   UsersIcon,
 } from "@heroicons/react/outline";
+import { useHistory } from "react-router";
 
 const SingleTour = (props) => {
   const { country, title, description, imageUrl, price, tourists } = props.tour;
+  const history = useHistory();
+
+  const handleBookNow = () => {
+    history.push("/booking");
+  };
   return (
     <div className="shadow-lg">
       {/* top image */}
@@ -29,7 +35,10 @@ const SingleTour = (props) => {
             <UsersIcon className="h-5 w-5 mr-1" />
             {tourists}
           </p>
-          <button className="flex items-center bg-yellow-100 text-yellow-400 px-2 py-1 rounded-3xl hover:bg-white hover:text-cyan-400 cursor-pointer">
+          <button
+            onClick={handleBookNow}
+            className="flex items-center bg-yellow-100 text-yellow-400 px-2 py-1 rounded-3xl hover:bg-white hover:text-cyan-400 cursor-pointer"
+          >
             <ShoppingCartIcon className="h-5 w-5 mr-1" />
             Book Now
           </button>

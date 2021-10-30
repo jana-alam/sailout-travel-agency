@@ -10,6 +10,7 @@ import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import MyBookings from "./components/MyBookings/MyBookings";
 import Footer from "./components/Footer/Footer";
 import AddTour from "./components/AddTour/AddTour";
+import Booking from "./components/Booking/Booking";
 
 function App() {
   return (
@@ -24,6 +25,9 @@ function App() {
             <Route path="/home">
               <Home></Home>
             </Route>
+            <PrivateRoute path="/booking">
+              <Booking></Booking>
+            </PrivateRoute>
             <PrivateRoute path="/my-bookings">
               <MyBookings></MyBookings>
             </PrivateRoute>

@@ -1,14 +1,14 @@
 import React from "react";
 import Banner from "../Banner/Banner";
 import Tours from "../Tours/Tours";
-import WhyChoose from "../WhyChoose/WhyChoose";
+import WhyBest from "../WhyBest/WhyBest";
 
 const Home = () => {
   return (
     <>
       <Banner></Banner>
       <Tours></Tours>
-      <WhyChoose></WhyChoose>
+      <WhyBest></WhyBest>
     </>
   );
 };
