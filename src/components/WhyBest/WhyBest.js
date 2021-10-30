@@ -10,7 +10,7 @@ import Benefit from "../Benefit/Benefit";
 const WhyBest = () => {
   return (
     <section className="py-12 bg-gray-200">
-      <div className="text-center space-y-2 mt-12">
+      <div className="text-center space-y-4 mt-12">
         <h1 className="text-5xl font-satisfy text-cyan-400 text-center">
           Why We
         </h1>

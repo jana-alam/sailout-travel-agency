@@ -7,6 +7,7 @@ const Benefit = (props) => {
       <div className=" animate-pulse h-12 w-12 mx-auto rounded-full">
         {props.children}
       </div>
+      <h4 className="font-semibold">{props.title}</h4>
       <p className="text-gray-500">{props?.content}</p>
     </div>
   );
