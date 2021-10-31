@@ -5,13 +5,13 @@ const AllBookings = () => {
   const [allBookings, setAllBookings] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/bookings/all")
+    fetch("https://quiet-cove-73576.herokuapp.com/bookings/all")
       .then((res) => res.json())
       .then((result) => setAllBookings(result));
   }, []);
 
   const bookingDelete = (id) => {
-    const url = `http://localhost:5000/bookings/${id}`;
+    const url = `https://quiet-cove-73576.herokuapp.com/bookings/${id}`;
     fetch(url, {
       method: "DELETE",
     })

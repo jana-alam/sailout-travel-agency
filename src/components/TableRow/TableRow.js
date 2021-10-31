@@ -7,7 +7,7 @@ const TableRow = ({ singleBooking, bookingDelete }) => {
   // Update Tour Status
   const [tourStatus, setTourStatus] = useState(status);
   const changeStatus = (id) => {
-    const url = `http://localhost:5000/bookings/${id}`;
+    const url = `https://quiet-cove-73576.herokuapp.com/bookings/${id}`;
     fetch(url, {
       method: "PUT",
     })

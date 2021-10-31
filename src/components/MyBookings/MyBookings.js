@@ -17,7 +17,7 @@ const MyBookings = () => {
   }, [user.email]);
 
   const deleteBooking = (id) => {
-    const url = `http://localhost:5000/bookings/${id}`;
+    const url = `https://quiet-cove-73576.herokuapp.com/bookings/${id}`;
     fetch(url, {
       method: "DELETE",
     })
