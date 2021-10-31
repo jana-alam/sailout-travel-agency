@@ -15,7 +15,7 @@ const AddTour = () => {
       imageUrl,
     };
 
-    fetch("http://localhost:5000/tours", {
+    fetch("https://quiet-cove-73576.herokuapp.com/tours", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

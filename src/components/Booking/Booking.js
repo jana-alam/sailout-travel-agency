@@ -10,7 +10,7 @@ const Booking = () => {
   const [tour, setTour] = useState({});
 
   useEffect(() => {
-    const url = `http://localhost:5000/tour/${id}`;
+    const url = `https://quiet-cove-73576.herokuapp.com/tour/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((result) => setTour(result));
@@ -33,7 +33,7 @@ const Booking = () => {
       status: "pending",
     };
 
-    fetch("http://localhost:5000/booking", {
+    fetch("https://quiet-cove-73576.herokuapp.com/booking", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
