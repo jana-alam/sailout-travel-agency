@@ -3,7 +3,10 @@ import React from "react";
 
 const BookedItem = ({ bookedInformation, deleteBooking }) => {
   const handleDelete = (id) => {
-    deleteBooking(id);
+    const result = window.confirm("Are you want to delete?");
+    if (result) {
+      deleteBooking(id);
+    }
   };
   return (
     <div className="flex border-2 border-cyan-400 divide-x-2 divide-yellow-400 justify-between px-4 py-2">
