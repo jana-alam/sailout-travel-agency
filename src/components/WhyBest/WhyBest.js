@@ -19,7 +19,7 @@ const WhyBest = () => {
           We are offering special befits with every tours you will love!!
         </p>
       </div>
-      <div className="grid grid-cols-4 gap-4 w-10/12 mx-auto my-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 w-10/12 mx-auto my-8">
         <Benefit
           title={"Visit Many Places"}
           content={

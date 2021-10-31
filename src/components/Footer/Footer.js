@@ -7,9 +7,9 @@ const Footer = () => {
     // Footer Section
     <footer>
       {/* footer-top section */}
-      <div className="footer-top grid grid-cols-5 bg-gray-800 py-8 px-12">
+      <div className="footer-top grid grid-cols-1 lg:grid-cols-5 bg-gray-800 py-8 px-12 lg:px-4 space-y-3">
         {/* company address */}
-        <div>
+        <div className=" flex flex-col items-center">
           <img src={darklogo} alt="" />
           <div className="text-left ml-2 mt-4 text-cyan-200">
             <div className="flex items-center">
@@ -43,7 +43,7 @@ const Footer = () => {
           <h4 className="font-satisfy text-4xl text-cyan-400 text-center mb-4">
             Newsletter
           </h4>
-          <div className="flex flex-col w-9/12 mx-auto">
+          <div className="flex flex-col  w-11/12 md:w-9/12 mx-auto">
             <input
               type="text"
               placeholder="someone@gmail.com"

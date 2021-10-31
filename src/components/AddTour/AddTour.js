@@ -33,7 +33,7 @@ const AddTour = () => {
       });
   };
   return (
-    <div className="container mx-auto pb-12">
+    <div className="container mx-auto pb-12 px-2">
       <h2 className="font-satisfy text-4xl text-center text-yellow-400">
         Add a new tour
       </h2>
@@ -44,7 +44,7 @@ const AddTour = () => {
           className="grid grid-cols-2 gap-3"
         >
           {/* country */}
-          <div className="space-y-1">
+          <div className="space-y-1 col-span-2 md:col-span-1">
             <p>Country name:</p>
             <input
               {...register("country", { required: true })}
@@ -54,7 +54,7 @@ const AddTour = () => {
             />
           </div>
           {/* tour title */}
-          <div className="space-y-1">
+          <div className="space-y-1 col-span-2 md:col-span-1">
             <p>Title:</p>
             <input
               {...register("title", { required: true })}
@@ -74,7 +74,7 @@ const AddTour = () => {
             />
           </div>
           {/* tour price */}
-          <div className="space-y-1">
+          <div className="space-y-1 col-span-2 md:col-span-1">
             <p>Price:</p>
             <input
               {...register("price", { required: true })}
@@ -84,7 +84,7 @@ const AddTour = () => {
             />
           </div>
           {/* Person per tour */}
-          <div className="space-y-1">
+          <div className="space-y-1 col-span-2 ">
             <p>Maximum Tourists:</p>
             <input
               {...register("tourists", { required: true })}

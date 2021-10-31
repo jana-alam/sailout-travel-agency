@@ -60,7 +60,7 @@ const Booking = () => {
   return (
     user?.email && (
       <section className="mb-4 px-12">
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
           {/* Booking section */}
           <div>
             <h1 className="font-satisfy text-center text-3xl md:text-5xl text-cyan-400">

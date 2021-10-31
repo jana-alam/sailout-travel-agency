@@ -27,7 +27,7 @@ const Login = () => {
           <div>
             <button
               onClick={handleLogin}
-              className="p-2 text-white bg-cyan-600 w-80"
+              className="p-2 text-white bg-cyan-600 w-60 sm:w-80"
             >
               Google
             </button>
