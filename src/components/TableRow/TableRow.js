@@ -13,7 +13,7 @@ const TableRow = ({ singleBooking, bookingDelete }) => {
     })
       .then((res) => res.json())
       .then((result) => {
-        setTourStatus("confirmed");
+        setTourStatus("approved");
       });
   };
   //   Delete Tour booking
@@ -38,18 +38,14 @@ const TableRow = ({ singleBooking, bookingDelete }) => {
       </td>
       <td className="px-6 py-4 whitespace-nowrap">{tourStatus}</td>
       <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium space-x-2">
-        {tourStatus === "pending" ? (
-          <>
-            <button onClick={() => changeStatus(_id)}>
-              <CheckCircleIcon className="h-6 w-6 text-green-500" />
-            </button>
-            <button onClick={() => delBooking(_id)}>
-              <TrashIcon className="h-6 w-6 text-red-500" />
-            </button>
-          </>
-        ) : (
-          "-"
+        {tourStatus === "pending" && (
+          <button onClick={() => changeStatus(_id)}>
+            <CheckCircleIcon className="h-6 w-6 text-green-500" />
+          </button>
         )}
+        <button onClick={() => delBooking(_id)}>
+          <TrashIcon className="h-6 w-6 text-red-500" />
+        </button>
       </td>
     </tr>
   );

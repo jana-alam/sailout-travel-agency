@@ -25,11 +25,9 @@ const BookedItem = ({ bookedInformation, deleteBooking }) => {
       </td>
       <td className="px-6 py-4 whitespace-nowrap">{status}</td>
       <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium space-x-2">
-        {status === "pending" && (
-          <button onClick={() => handleDelete(bookedInformation._id)}>
-            <TrashIcon className="h-6 w-6 text-red-500" />
-          </button>
-        )}
+        <button onClick={() => handleDelete(bookedInformation._id)}>
+          <TrashIcon className="h-6 w-6 text-red-500" />
+        </button>
       </td>
     </tr>
   );

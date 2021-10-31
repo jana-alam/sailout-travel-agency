@@ -1,12 +1,13 @@
-import { RefreshIcon } from "@heroicons/react/outline";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { useParams } from "react-router";
+import { useHistory, useParams } from "react-router";
 import useAuth from "../../hooks/useAuth";
+import Spinner from "../Spinner/Spinner";
 
 const Booking = () => {
   const { user } = useAuth();
   const { id } = useParams();
+  const history = useHistory();
   const [tour, setTour] = useState({});
 
   useEffect(() => {
@@ -20,10 +21,12 @@ const Booking = () => {
   const { register, handleSubmit, reset } = useForm();
   //form handler
   const onSubmit = (data) => {
-    const { name, email, tickets, weights, message, phoneNumber } = data;
+    const { name, email, tickets, weights, message, phoneNumber, address } =
+      data;
     const newBooking = {
       name,
       email,
+      address,
       tickets,
       weights,
       message,
@@ -46,16 +49,13 @@ const Booking = () => {
         if (result.insertedId) {
           alert("Your Tour is Booked successfully!");
           reset();
+          history.push("/my-bookings");
         }
       });
   };
 
   if (!tour?._id) {
-    return (
-      <div className="mx-auto w-12">
-        <RefreshIcon className="animate-spin text-yellow-400" />
-      </div>
-    );
+    return <Spinner />;
   }
   return (
     user?.email && (
@@ -88,6 +88,16 @@ const Booking = () => {
                     {...register("email", { required: true })}
                     defaultValue={user?.email}
                     type="email"
+                    className="w-full px-2 py-1 ring-1 ring-cyan-300 outline-none focus:ring-2 focus:ring-cyan-500"
+                  />
+                </div>
+                {/* address */}
+                <div className="space-y-1 col-span-2">
+                  <p>Address:</p>
+                  <textarea
+                    {...register("address", { required: true })}
+                    type="text"
+                    placeholder="Your Address"
                     className="w-full px-2 py-1 ring-1 ring-cyan-300 outline-none focus:ring-2 focus:ring-cyan-500"
                   />
                 </div>

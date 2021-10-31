@@ -1,17 +1,13 @@
 import React from "react";
 import { Redirect, Route } from "react-router";
 import useAuth from "../../hooks/useAuth";
-import { RefreshIcon } from "@heroicons/react/outline";
+import Spinner from "../Spinner/Spinner";
 
 const PrivateRoute = ({ children, ...rest }) => {
   const { user, isLoading } = useAuth();
 
   if (isLoading) {
-    return (
-      <div className="mx-auto w-12">
-        <RefreshIcon className="animate-spin text-yellow-400" />
-      </div>
-    );
+    return <Spinner />;
   } else {
     return (
       <Route

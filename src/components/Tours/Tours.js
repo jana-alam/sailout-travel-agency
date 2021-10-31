@@ -1,15 +1,6 @@
-import React, { useEffect, useState } from "react";
 import SingleTour from "../SingleTour/SingleTour";
 
-const Tours = () => {
-  const [tourItems, setTourItems] = useState([]);
-  useEffect(() => {
-    fetch("https://quiet-cove-73576.herokuapp.com/tours")
-      .then((res) => res.json())
-      .then((result) => {
-        setTourItems(result);
-      });
-  }, []);
+const Tours = ({ tourItems }) => {
   return (
     <section className="bg-gray-100 py-12">
       <div className="text-center space-y-2 mt-12">
