@@ -1,3 +1,4 @@
+import { RefreshIcon } from "@heroicons/react/outline";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useParams } from "react-router";
@@ -16,9 +17,45 @@ const Booking = () => {
   }, [id]);
 
   //   react hook form
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, reset } = useForm();
   //form handler
-  const onSubmit = (data) => {};
+  const onSubmit = (data) => {
+    const { name, email, tickets, weights, message, phoneNumber } = data;
+    const newBooking = {
+      name,
+      email,
+      tickets,
+      weights,
+      message,
+      phoneNumber,
+      tourTitle: tour?.title,
+      tourId: tour?._id,
+      staus: "pending",
+    };
+
+    fetch("http://localhost:5000/booking", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newBooking),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        if (result.insertedId) {
+          alert("Your Tour is Booked successfully!");
+          reset();
+        }
+      });
+  };
+
+  if (!tour?._id) {
+    return (
+      <div className="mx-auto w-12">
+        <RefreshIcon className="animate-spin text-yellow-400" />
+      </div>
+    );
+  }
   return (
     user?.email && (
       <section className="mb-4 px-12">
@@ -67,7 +104,7 @@ const Booking = () => {
                 <div className="space-y-1">
                   <p>Maximum Weight (kg):</p>
                   <input
-                    {...register("weight", { required: true })}
+                    {...register("weights", { required: true })}
                     type="number"
                     className="w-full px-2 py-1 ring-1 ring-cyan-300 outline-none focus:ring-2 focus:ring-cyan-500"
                   />
@@ -94,7 +131,7 @@ const Booking = () => {
 
                 <input
                   type="submit"
-                  value="Add tour"
+                  value="Confirm"
                   className="px-20 py-2 mt-2 bg-yellow-500 text-white col-span-2 cursor-pointer"
                 />
 
