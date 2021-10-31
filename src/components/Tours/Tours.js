@@ -13,7 +13,7 @@ const Tours = ({ tourItems }) => {
         </p>
       </div>
       {/* Tours Container */}
-      <div className="grid grid-cols-3 gap-8 w-10/12 mx-auto mt-8">
+      <div className="grid grid-cols-1  md:grid-cols-2 xl:grid-cols-3 gap-8 w-10/12 mx-auto mt-8">
         {tourItems.map((tour) => (
           <SingleTour key={tour._id} tour={tour}></SingleTour>
         ))}

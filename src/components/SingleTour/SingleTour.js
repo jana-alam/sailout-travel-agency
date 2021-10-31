@@ -24,9 +24,11 @@ const SingleTour = (props) => {
         </div>
       </div>
       {/* description */}
-      <div className="p-6 pb-8">
+      <div className=" p-1 sm:p-2 md:p-6 pb-8">
         <h2 className="font-satisfy text-2xl mb-3">{title}</h2>
-        <p className="text-gray-600 h-32">{description}</p>
+        <p className="text-gray-600 h-40 sm:h-32 md:h-40 xl:h-32">
+          {description}
+        </p>
         <div className="flex justify-between mt-2">
           <p className="flex items-center text-cyan-400">
             <CurrencyDollarIcon className="h-5 w-5 mr-1" />
