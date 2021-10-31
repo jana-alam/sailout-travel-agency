@@ -1,5 +1,5 @@
-- Add two extra sections in the home page in addition to the 4 sections mentioned above.
 - The Place Order page should display detailed information of the item, user has clicked. It will display users name and email address from the login system and user will provide address and necessary information to place the order/booking/purchase.
+
 - On the my orders page, the logged in user will see only his/her orders. If the user wants, he/she should be able to cancel/delete any order. Ask a confirmation message before deleting or canceling an item. Using browser confirmation dialog is ok.
 
 Bonus:
@@ -14,8 +14,12 @@ Bonus:
 - Clean and organized Code. Organize components and add comments when needed
 
 - Add a loading spinner on the home page, if data is loading a spinner will be displayed.
-- Designn Login page
-- Design notfound page
+
+## Designn Login page
+
+## Design notfound page
+
+## Add two extra sections in the home page in addition to the 4 sections mentioned above.
 
 ## Home page will have a header (simple navbar), banner, offerings (services/items/options/plans: the main items that user will purchase), and footer.- DONE
 

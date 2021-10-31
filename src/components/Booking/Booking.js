@@ -10,7 +10,7 @@ const Booking = () => {
   const [tour, setTour] = useState({});
 
   useEffect(() => {
-    const url = `http://localhost:5000/booking/${id}`;
+    const url = `http://localhost:5000/tour/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((result) => setTour(result));
@@ -30,7 +30,7 @@ const Booking = () => {
       phoneNumber,
       tourTitle: tour?.title,
       tourId: tour?._id,
-      staus: "pending",
+      status: "pending",
     };
 
     fetch("http://localhost:5000/booking", {
