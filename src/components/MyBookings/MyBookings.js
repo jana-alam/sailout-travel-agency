@@ -16,6 +16,24 @@ const MyBookings = () => {
         setBookings(result);
       });
   }, [user.email]);
+
+  const deleteBooking = (id) => {
+    const url = `http://localhost:5000/bookings/user/${id}`;
+    fetch(url, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        if (result.deletedCount) {
+          alert("deleted successfully");
+          const remainingBookings = bookings.filter(
+            (booking) => booking._id !== id
+          );
+          setBookings(remainingBookings);
+        }
+      });
+  };
+
   return (
     <section className="py-8 bg-gray-50">
       <div className="text-center">
@@ -36,6 +54,7 @@ const MyBookings = () => {
           <BookedItem
             key={booked.tourId}
             bookedInformation={booked}
+            deleteBooking={deleteBooking}
           ></BookedItem>
         ))}
       </div>

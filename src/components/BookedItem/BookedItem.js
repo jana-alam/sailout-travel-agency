@@ -1,18 +1,9 @@
 import { TrashIcon } from "@heroicons/react/outline";
 import React from "react";
 
-const BookedItem = ({ bookedInformation }) => {
+const BookedItem = ({ bookedInformation, deleteBooking }) => {
   const handleDelete = (id) => {
-    const url = `http://localhost:5000/bookings/user/${id}`;
-    fetch(url, {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then((result) => {
-        if (result.deletedCount) {
-          alert("deleted successfully");
-        }
-      });
+    deleteBooking(id);
   };
   return (
     <div className="flex border-2 border-cyan-400 divide-x-2 divide-yellow-400 justify-between px-4 py-2">
