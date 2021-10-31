@@ -1,6 +1,6 @@
 import React from "react";
 import { Disclosure } from "@headlessui/react";
-import { LogoutIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
+import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import logo from "../../images/sailout-logo.png";
 import useAuth from "../../hooks/useAuth";
 import { NavLink } from "react-router-dom";
