@@ -1,23 +1,17 @@
-import React, { useState, useEffect } from "react";
-import useAuth from "../../hooks/useAuth";
-import BookedItem from "../BookedItem/BookedItem";
+import React, { useEffect, useState } from "react";
+import TableRow from "../TableRow/TableRow";
 
-const MyBookings = () => {
-  const { user } = useAuth();
-  const [bookings, setBookings] = useState([]);
+const AllBookings = () => {
+  const [allBookings, setAllBookings] = useState([]);
 
   useEffect(() => {
-    const url = `https://quiet-cove-73576.herokuapp.com/bookings/user/${user.email}`;
-    fetch(url)
+    fetch("http://localhost:5000/bookings/all")
       .then((res) => res.json())
-      .then((result) => {
-        console.log(result.status);
-        setBookings(result);
-      });
-  }, [user.email]);
+      .then((result) => setAllBookings(result));
+  }, []);
 
-  const deleteBooking = (id) => {
-    const url = `https://quiet-cove-73576.herokuapp.com/bookings/${id}`;
+  const bookingDelete = (id) => {
+    const url = `http://localhost:5000/bookings/${id}`;
     fetch(url, {
       method: "DELETE",
     })
@@ -25,23 +19,22 @@ const MyBookings = () => {
       .then((result) => {
         if (result.deletedCount) {
           alert("deleted successfully");
-          const remainingBookings = bookings.filter(
+          const remainingBookings = allBookings.filter(
             (booking) => booking._id !== id
           );
-          setBookings(remainingBookings);
+          setAllBookings(remainingBookings);
         }
       });
   };
-
   return (
-    <section className="py-8 bg-gray-50">
-      {/* Top section */}
+    <section className="container mx-auto">
+      {/* Top sectoin */}
       <div className="text-center">
         <h1 className="text-5xl font-satisfy text-cyan-400 text-center">
-          Your Bookings
+          All Bookings
         </h1>
       </div>
-      {/* Table section */}
+      {/* Table Section */}
       <div className="flex flex-col w-10/12 mx-auto mt-6">
         <div className="overflow-x-auto">
           <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
@@ -83,12 +76,12 @@ const MyBookings = () => {
                   </tr>
                 </thead>
                 <tbody className="bg-white divide-y divide-gray-200">
-                  {bookings.map((booked) => (
-                    <BookedItem
-                      key={booked.tourId}
-                      bookedInformation={booked}
-                      deleteBooking={deleteBooking}
-                    ></BookedItem>
+                  {allBookings.map((singleBooking) => (
+                    <TableRow
+                      key={singleBooking._id}
+                      singleBooking={singleBooking}
+                      bookingDelete={bookingDelete}
+                    />
                   ))}
                 </tbody>
               </table>
@@ -100,4 +93,4 @@ const MyBookings = () => {
   );
 };
 
-export default MyBookings;
+export default AllBookings;

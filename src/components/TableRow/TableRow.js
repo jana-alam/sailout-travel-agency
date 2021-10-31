@@ -1,13 +1,13 @@
-import { TrashIcon } from "@heroicons/react/outline";
+import { CheckCircleIcon, TrashIcon } from "@heroicons/react/outline";
 import React from "react";
 
-const BookedItem = ({ bookedInformation, deleteBooking }) => {
-  const { name, email, tourTitle, tourImageUrl, tickets, status } =
-    bookedInformation;
-  const handleDelete = (id) => {
+const TableRow = ({ singleBooking, bookingDelete }) => {
+  const { name, email, tourTitle, tourImageUrl, tickets, status, _id } =
+    singleBooking;
+  const delBooking = (id) => {
     const result = window.confirm("Are you want to delete?");
     if (result) {
-      deleteBooking(id);
+      bookingDelete(id);
     }
   };
   return (
@@ -25,7 +25,10 @@ const BookedItem = ({ bookedInformation, deleteBooking }) => {
       </td>
       <td className="px-6 py-4 whitespace-nowrap">{status}</td>
       <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium space-x-2">
-        <button onClick={() => handleDelete(bookedInformation._id)}>
+        <button>
+          <CheckCircleIcon className="h-6 w-6 text-green-500" />
+        </button>
+        <button onClick={() => delBooking(_id)}>
           <TrashIcon className="h-6 w-6 text-red-500" />
         </button>
       </td>
@@ -33,4 +36,4 @@ const BookedItem = ({ bookedInformation, deleteBooking }) => {
   );
 };
 
-export default BookedItem;
+export default TableRow;

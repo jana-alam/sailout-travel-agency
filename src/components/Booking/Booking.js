@@ -30,6 +30,7 @@ const Booking = () => {
       phoneNumber,
       tourTitle: tour?.title,
       tourId: tour?._id,
+      tourImageUrl: tour?.imageUrl,
       status: "pending",
     };
 

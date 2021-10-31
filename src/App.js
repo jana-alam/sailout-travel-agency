@@ -11,6 +11,7 @@ import MyBookings from "./components/MyBookings/MyBookings";
 import Footer from "./components/Footer/Footer";
 import AddTour from "./components/AddTour/AddTour";
 import Booking from "./components/Booking/Booking";
+import AllBookings from "./components/AllBookings/AllBookings";
 
 function App() {
   return (
@@ -30,6 +31,9 @@ function App() {
             </PrivateRoute>
             <PrivateRoute path="/my-bookings">
               <MyBookings></MyBookings>
+            </PrivateRoute>
+            <PrivateRoute path="/all-bookings">
+              <AllBookings></AllBookings>
             </PrivateRoute>
             <PrivateRoute path="/add-tour">
               <AddTour></AddTour>
