@@ -91,7 +91,7 @@ const Header = () => {
                       type="button"
                       className="px-3 py-2 rounded-2xl bg-red-400 text-white"
                     >
-                      <LogoutIcon className="h-5 w-5" aria-hidden="true" />
+                      Log Out
                     </button>
                   </div>
                 ) : (
@@ -140,7 +140,7 @@ const Header = () => {
                       type="button"
                       className="px-3 py-2 rounded-2xl bg-red-400 text-white"
                     >
-                      <LogoutIcon className="h-5 w-5" aria-hidden="true" />
+                      Log out
                     </button>
                   </div>
                 </>
